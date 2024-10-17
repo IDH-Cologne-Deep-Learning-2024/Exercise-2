@@ -3,8 +3,12 @@ def calc():
     num1 = int(input())
     print("Enter number 2: ")
     num2 = int(input())
-    print("Sum: " + str(num1+num2))
-    print("Product: " + str(num1*num2))
+    print("Enter either + for addition or x for multiplication: ")
+    choice = str(input())
+    if choice  == '+':
+      print("Sum: " + str(num1+num2))
+    elif choice  == 'x':   
+       print("Product: " + str(num1*num2))
 
 print('Run program calc in interactive (i) or in batch (b) mode.')
 choice = str(input())
