@@ -40,7 +40,13 @@ def calc():
         exit()
 
 def calcb():
-    print('test')
+    f_array = []
+    f = open('calculations.txt', 'r')
+    for x in f:
+        f_array.append(x)
+    
+    
+   
 
 def add(num1, num2):
     print("Sum: " + str(num1+num2))
