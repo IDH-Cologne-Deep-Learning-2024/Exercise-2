@@ -9,6 +9,10 @@ def calc():
       print("Sum: " + str(num1+num2))
     elif choice  == 'x':   
        print("Product: " + str(num1*num2))
+    print("Enter y if you want to continue or any other key if you want to exit: ")
+    choice2 = str(input())
+    if choice2 == 'y':
+       calc()
 
 print('Run program calc in interactive (i) or in batch (b) mode.')
 choice = str(input())
