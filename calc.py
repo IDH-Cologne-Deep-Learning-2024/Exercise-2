@@ -1,9 +1,12 @@
 import os
 import sys
+
 def add():
     print("Sum: " + str(num1+num2))
 def mult():
     print("Product: " + str(num1*num2))
+
+    
 def interactive():
     print("Enter number 1: ")
     global num1
