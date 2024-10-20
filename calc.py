@@ -1,18 +1,38 @@
 def calc():
-    print("Enter number 1: ")
-    num1 = int(input())
-    print("Enter number 2: ")
-    num2 = int(input())
-    print("Sum: " + add(num1, num2))
-    print("Product: " + multiply(num1, num2))
+    active = True
+    while(active):
+        #user input
+        print("Enter number 1: ")
+        num1 = int(input())
+        print("Enter number 2: ")
+        num2 = int(input())
 
+        #select method of operation and do the maths thing
+        print("Add or multiply? (+/*)")
+        ans = str(input())
+        if ans == '+':
+            add(num1, num2)
+        elif ans == '*':
+            multiply(num1, num2)
+        #imagine..a third option in case of error 
+
+        #confirmation to continue or not
+        print("Continue? (y/n)")
+        ans = str(input())
+        if ans =='y':
+            calc()
+        elif ans =='n':
+            print("Stopping calculator... Bye!")
+            active = False
+
+#functions to add and multiply
 def add(num1, num2):
-    sum = str(num1 + num2)
-    print(sum)
+    sum = num1 + num2
+    print("Sum: "+ (str(sum)))
 
 def multiply(num1, num2):
-    product = str(num1 * num2)
-    print(product)
+    product = num1 * num2
+    print("Product: "+ (str(product)))
 
 print('Run program calc in interactive (i) or in batch (b) mode.')
 choice = str(input())
