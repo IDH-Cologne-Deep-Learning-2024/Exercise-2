@@ -1,3 +1,4 @@
+import sys
 def calc():
     print('select mathematical operator')
     print('addition (+) multiplication (*)')
@@ -37,16 +38,30 @@ def calc():
         calc()
     else:
         print('stopping operartion')
-        exit()
+        sys.exit()
 
 def calcb():
-    f_array = []
-    f = open('calculations.txt', 'r')
-    for x in f:
-        f_array.append(x)
+    f = open('Exercise-2/calculations.txt', 'r')
+    f_red = f.read()
+    f.close()
+    f_split = f_red.split('\n')
     
-    
-   
+    for x in f_split:
+        x.strip()
+
+        if '+' in x:
+            x.replace("'", '')
+            i = x.find('+')
+            add(int(x[:i]),int(x[i+2:]))
+
+        if '*' in x:
+            x.replace("'", '')
+            i = x.find('*')
+            mult(int(x[:i]),int(x[i+2:]))
+
+    print('Calculations in batch mode completed\n') 
+    print('stopping operartion')
+    sys.exit()
 
 def add(num1, num2):
     print("Sum: " + str(num1+num2))
