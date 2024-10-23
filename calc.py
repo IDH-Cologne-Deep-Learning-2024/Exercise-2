@@ -16,9 +16,9 @@ def calc():
 
 def batch():
     with open("calculations.txt", "r") as file_object:
-        lines = file_object.readlines()  # Indented correctly
+        lines = file_object.readlines()  
     for line in lines:
-        expression = line.strip()  # Indented correctly
+        expression = line.strip()  
         result = eval(expression)
         print(result)
 
