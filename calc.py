@@ -14,6 +14,15 @@ def calc():
     if choice2 == 'y':
        calc()
 
+def batch():
+    with open("calculations.txt", "r") as file_object:
+        lines = file_object.readlines()  # Indented correctly
+    for line in lines:
+        expression = line.strip()  # Indented correctly
+        result = eval(expression)
+        print(result)
+
+
 print('Run program calc in interactive (i) or in batch (b) mode.')
 choice = str(input())
 if choice == 'i':
@@ -21,6 +30,7 @@ if choice == 'i':
     calc()
 elif choice == 'b':
     print ('running batch mode')
+    batch()
 else:
     print('no matching input')
     calc.py
